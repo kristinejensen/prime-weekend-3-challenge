@@ -1,28 +1,58 @@
 var operationsArray = ['Add', 'Subtract', 'Multiply', 'Divide']; // array to dynamically create operations buttons
 
 var operationsComponents = { // empty object to send values and operation type to server logic
-  firstValue: 0,
-  secondValue: 0,
-  operationType: ''
+  x: 0,
+  y: 0,
+  operation: ''
 };
 
 $('document').ready(function(){
   console.log('jquery is working');
 
-  appendButtons(operationsArray); // calling appendButtons function
+$('#addButton').on('click', function(){
+  operationsComponents.x = $('#firstInput').val();
+  operationsComponents.y = $('#secondInput').val();
+  operationsComponents.operation = 'add';
+  console.log(operationsComponents);
+});
 
-  function appendButtons(array){ // function to dynamically append operations buttons to DOM
-    for (var i = 0; i < array.length; i++) {
-      $('#operationsButtons').append('<button class="button" id="' + array[i] + '">' + array[i] + '</button>');
-    } // end of for loop in appendButtons function - do not remove
-  } // end of appendButtons functions - do not remove
+$('#subtractButton').on('click', function(){
+  operationsComponents.x = $('#firstInput').val();
+  operationsComponents.y = $('#secondInput').val();
+  operationsComponents.operation = 'subtract';
+  console.log(operationsComponents);
+});
 
-$('.button').on('click', function(){
-  
-}); // end of event listener - do not remove
+$('#multiplyButton').on('click', function(){
+  operationsComponents.x = $('#firstInput').val();
+  operationsComponents.y = $('#secondInput').val();
+  operationsComponents.operation = 'multiply';
+  console.log(operationsComponents);
+});
+
+$('#divideButton').on('click', function(){
+  operationsComponents.x = $('#firstInput').val();
+  operationsComponents.y = $('#secondInput').val();
+  operationsComponents.operation = 'divide';
+  console.log(operationsComponents);
+});
+
+$('#clearButton').on('click', function(){
+  $('#firstInput').val(null);
+  $('#secondInput').val(null);
+});
 
 
+// console.log(operationsComponents);
 
 
+}); // end of document ready
 
-}); // end of document ready function - do not remove
+
+// appendButtons(operationsArray); // calling appendButtons function
+//
+// function appendButtons(array){ // function to dynamically append operations buttons to DOM
+//   for (var i = 0; i < array.length; i++) {
+//     $('#operationsButtons').append('<button class="button" data-value="' + array[i] + '">' + array[i] + '</button>');
+//   }
+// }

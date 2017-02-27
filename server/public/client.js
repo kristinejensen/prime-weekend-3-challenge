@@ -7,6 +7,20 @@ var componentsObject = { // empty object to send values and operation type to se
 $('document').ready(function(){
   console.log('jquery is working');
 
+  $('#addButton').on('click', function(){
+    componentsObject.x = $('#firstInput').val();
+    componentsObject.y = $('#secondInput').val();
+    componentsObject.operation = 'add';
+    $.ajax({
+      type: 'POST',
+      url: '/add',
+      data: componentsObject,
+      success: function(response) {
+        $('#total').text(response);
+        console.log(response);
+      }
+    });
+  });
 
   $('#subtractButton').on('click', function(){
     componentsObject.x = $('#firstInput').val();
@@ -16,31 +30,28 @@ $('document').ready(function(){
       type: 'POST',
       url: '/subtract',
       data: componentsObject,
-      succes: function(response) {
+      success: function(response) {
         $('#total').text(response);
         console.log(response);
       }
     });
   });
 
-  // $('#subtractButton').on('click', function(){
-  //   componentsObject.x = $('#firstInput').val();
-  //   componentsObject.y = $('#secondInput').val();
-  //   componentsObject.operation = 'subtract';
-  // });
-  //
-  // $('#multiplyButton').on('click', function(){
-  //   componentsObject.x = $('#firstInput').val();
-  //   componentsObject.y = $('#secondInput').val();
-  //   componentsObject.operation = 'multiply';
-  // });
-  //
-  // $('#divideButton').on('click', function(){
-  //   componentsObject.x = $('#firstInput').val();
-  //   componentsObject.y = $('#secondInput').val();
-  //   componentsObject.operation = 'divide';
-  // });
-  //
+  $('#multiplyButton').on('click', function(){
+    componentsObject.x = $('#firstInput').val();
+    componentsObject.y = $('#secondInput').val();
+    componentsObject.operation = 'multiply';
+    $.ajax({
+      type: 'POST',
+      url: '/multiply',
+      data: componentsObject,
+      success: function(response) {
+        $('#total').text(response);
+        console.log(response);
+      }
+    });
+  });
+
 
   $('#clearButton').on('click', function(){
     $('#firstInput').val(null);

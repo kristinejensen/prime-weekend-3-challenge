@@ -1,0 +1,16 @@
+.operatorButton {
+  font-size: 10px;
+  border-radius: 6px;
+}
+#firstInput {
+  margin-bottom: 20px;
+}
+
+#secondInput {
+  margin-bottom: 20px;
+}
+
+#totalStyling {
+  margin-bottom: 20px;
+  font-weight: bold;
+}

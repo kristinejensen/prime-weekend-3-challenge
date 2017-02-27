@@ -9,16 +9,16 @@
 </head>
 <body>
   <h2>Online Calculator</h2>
-  <label for="firstInput">First Value</label>
-  <input id="firstInput" type="number" name="firstInput" placeholder="Enter number here">
-  <label for="secondInput">Second Value</label>
+  <label for="firstInput">First Value: </label>
+  <input id="firstInput" type="number" name="firstInput" placeholder="Enter number here"><br>
+  <label for="secondInput">Second Value: </label>
   <input id="secondInput" type="number" name="secondInput" placeholder="Enter number here">
+  <div id="totalStyling">Total: <span id="total">0</span></div>
   <div id="operationsButtons"></div>
   <button type="button" class="operatorButton" id="addButton">Add</button>
   <button type="button" class="operatorButton" id="subtractButton">Subtract</button>
   <button type="button" class="operatorButton" id="multiplyButton">Multiply</button>
   <button type="button" class="operatorButton" id="divideButton">Divide</button>
-  <button type="button" id="clearButton">Clear</button>
-  <div>Total: <span id="total">0</span></div>
+  <button type="button" class="operatorButton" id="clearButton">Clear</button>
 </body>
 </html>

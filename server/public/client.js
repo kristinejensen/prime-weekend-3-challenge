@@ -17,7 +17,6 @@ $('document').ready(function(){
       data: componentsObject,
       success: function(response) {
         $('#total').text(response);
-        console.log(response);
       }
     });
   });
@@ -32,7 +31,6 @@ $('document').ready(function(){
       data: componentsObject,
       success: function(response) {
         $('#total').text(response);
-        console.log(response);
       }
     });
   });
@@ -47,18 +45,31 @@ $('document').ready(function(){
       data: componentsObject,
       success: function(response) {
         $('#total').text(response);
-        console.log(response);
       }
     });
   });
 
+  $('#divideButton').on('click', function(){
+    componentsObject.x = $('#firstInput').val();
+    componentsObject.y = $('#secondInput').val();
+    componentsObject.operation = 'divide';
+    $.ajax({
+      type: 'POST',
+      url: '/divide',
+      data: componentsObject,
+      success: function(response) {
+        $('#total').text(response);
+      }
+    });
+  });
 
   $('#clearButton').on('click', function(){
     $('#firstInput').val(null);
     $('#secondInput').val(null);
+    $('#total').text(0);
   });
 
-}); // do not remove -- end of document ready
+});
 
 // var operationsArray = ['Add', 'Subtract', 'Multiply', 'Divide'];
 

@@ -40,5 +40,14 @@ app.post('/multiply', function(req, res){
   res.send(multiplyTotal.toString());
 });
 
+app.post('/divide', function(req, res){
+  var newObject = req.body;
+  var divideTotal = divide(newObject.x, newObject.y);
+  function divide(x, y){
+    var total = x / y;
+    return total;
+  }
+  res.send(divideTotal.toString());
+});
 
 app.listen(port);
